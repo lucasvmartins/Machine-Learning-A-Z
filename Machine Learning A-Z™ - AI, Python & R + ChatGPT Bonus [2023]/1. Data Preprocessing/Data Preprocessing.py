@@ -14,10 +14,15 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('Dataset/Data.csv')
 
 # Separating feature values from the dependent variable
-features = data.iloc[:, :-1].values
-dependent = data.iloc[:, -1].values
+x = data.iloc[:, :-1].values
+y = data.iloc[:, -1].values
 
 
 # %%
 #################### Taking care of missing data ####################
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
+
+
+# %%
 
