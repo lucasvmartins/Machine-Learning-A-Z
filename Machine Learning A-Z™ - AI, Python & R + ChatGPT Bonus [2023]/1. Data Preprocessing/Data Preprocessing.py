@@ -2,15 +2,14 @@
 
 
 # %%
-#################### Importing The Libraries ####################
+#################### Importing the Libraries ####################
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
 
 # %%
-#################### Importing The Dataset ####################
-
+#################### Importing the Dataset ####################
 data = pd.read_csv('Dataset/Data.csv')
 
 # Separating feature values from the dependent variable
@@ -31,7 +30,6 @@ x[:, 1:3] = imputer.transform(x[:, 1:3])
 #################### Encoding Categorical Data ####################
 
 # Encoding the independent variable
-
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 
@@ -45,3 +43,10 @@ from sklearn.preprocessing import LabelEncoder
 
 le = LabelEncoder()
 y = le.fit_transform(y)
+
+
+# %%
+########## Splitting the Dataset Into the Training Set and Test Set ##########
+from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
