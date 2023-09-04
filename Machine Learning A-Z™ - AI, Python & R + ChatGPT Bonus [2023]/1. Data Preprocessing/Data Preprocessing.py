@@ -46,8 +46,17 @@ y = le.fit_transform(y)
 
 
 # %%
-########## Splitting the Dataset Into the Training Set and Test Set ##########
+########## Splitting the Dataset Into the Training and Test Set ##########
 from sklearn.model_selection import train_test_split
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
+
+
+# %%
+#################### Feature Scaling ####################
+# Not used in most ML models
+
+from sklearn.preprocessing import StandardScaler
+
+sc = StandardScaler()
 
