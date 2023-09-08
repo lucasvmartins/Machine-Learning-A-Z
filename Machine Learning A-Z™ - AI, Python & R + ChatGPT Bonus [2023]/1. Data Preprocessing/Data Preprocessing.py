@@ -5,7 +5,7 @@
 #################### Importing the Libraries ####################
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 
 # %%
@@ -49,14 +49,19 @@ y = le.fit_transform(y)
 ########## Splitting the Dataset Into the Training and Test Set ##########
 from sklearn.model_selection import train_test_split
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
+X_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
 
 
 # %%
 #################### Feature Scaling ####################
 # Not used in most ML models
+'''
+Standardization (always works)
+Normalization (Works more for data that follows a standard deviation)
+'''
 
 from sklearn.preprocessing import StandardScaler
-
 sc = StandardScaler()
+
+X_train[:, 3:] = sc.fit_transform(X_train[:, 3:])
 
