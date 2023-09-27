@@ -1,4 +1,4 @@
-# -------------------- Data Preprocessing in Python--------------------
+# -------------------- Data Preprocessing in Python --------------------
 
 
 # %%
@@ -10,6 +10,9 @@ import numpy as np
 # %%
 # -------------------- Importing the Dataset --------------------
 data = pd.read_csv('Dataset/Data.csv')
+
+dataset.isna()
+dataset.isna().sum()
 
 # Separating feature values from the dependent variable
 X = data.iloc[:, :-1].values
@@ -33,6 +36,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 
 ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])], remainder='passthrough')
+# Exemples
+# categorical_features = ['Sex', 'Embarked', 'Pclass']
+# ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), categorical_features)], remainder='passthrough')
 
 X = np.array(ct.fit_transform(X))
 
