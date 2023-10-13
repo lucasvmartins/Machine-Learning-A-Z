@@ -11,8 +11,8 @@ import numpy as np
 # -------------------- Importing the Dataset --------------------
 data = pd.read_csv('Dataset/Data.csv')
 
-dataset.isna()
-dataset.isna().sum()
+data.isna()
+data.isna().sum()
 
 # Separating feature values from the dependent variable
 X = data.iloc[:, :-1].values
