@@ -33,5 +33,25 @@ regressor.fit(X_train, y_train) # Fitting the model with de training sets
 
 
 #%%
-# -------------------- Predicting the Test Sets --------------------
-regressor.predict(X_test)
+# -------------------- Predicting the Test Set Results --------------------
+y_pred = regressor.predict(X_test)
+
+
+#%%
+# -------------------- Visualising the Training Set Results --------------------
+plt.scatter(X_train, y_train, color='green')
+plt.plot(X_train, regressor.predict(X_train))
+plt.title('Salary per Years of Experience (Training Set)')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.show()
+
+
+#%%
+# -------------------- Visualising the Test Set Results --------------------
+plt.scatter(X_test, y_test, color='red')
+plt.plot(X_train, regressor.predict(X_train))
+plt.title('Salary per Years of Experience (Test Set)')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.show()
