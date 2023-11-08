@@ -2,13 +2,13 @@
 
 
 # %%
-# -------------------- Importing the Libraries --------------------
+# ---------- Importing the Libraries ----------
 import pandas as pd
 import numpy as np
 
 
 # %%
-# -------------------- Importing the Dataset --------------------
+# ---------- Importing the Dataset ----------
 data = pd.read_csv('Dataset/Data.csv')
 
 data.isna()
@@ -20,7 +20,7 @@ y = data.iloc[:, -1].values
 
 
 # %%
-# -------------------- Taking Care of Missing Data --------------------
+# ---------- Taking Care of Missing Data ----------
 from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
 
@@ -29,7 +29,7 @@ X[:, 1:3] = imputer.transform(X[:, 1:3])
 
 
 # %%
-# -------------------- Encoding Categorical Data --------------------
+# ---------- Encoding Categorical Data ----------
 
 # Encoding the independent variable
 from sklearn.compose import ColumnTransformer
@@ -58,7 +58,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 
 # %%
-# -------------------- Feature Scaling --------------------
+# ---------- Feature Scaling ----------
 # Not used in most ML models
 '''
 Standardization (always works)

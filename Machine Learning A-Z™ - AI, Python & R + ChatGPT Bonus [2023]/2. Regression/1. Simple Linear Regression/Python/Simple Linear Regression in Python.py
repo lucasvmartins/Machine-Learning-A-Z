@@ -1,14 +1,14 @@
 # -------------------- Simple Linear Regression in Python  --------------------
 
 #%%
-# -------------------- Importing the Libraries --------------------
+# ---------- Importing the Libraries ----------
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
 
 #%%
-# -------------------- Importing the Dataset --------------------
+# ---------- Importing the Dataset ----------
 data = pd.read_csv('Dataset/Salary_Data.csv')
 
 # Check for missing values
@@ -25,7 +25,7 @@ X_train, X_test, y_train,  y_test = train_test_split(X, y, test_size = 0.2, rand
 
 
 #%%
-# -------------------- Training the Model --------------------
+# ---------- Training the Model ----------
 from sklearn.linear_model import LinearRegression
 regressor = LinearRegression() # Creating the object of the model
 
@@ -33,12 +33,12 @@ regressor.fit(X_train, y_train) # Fitting the model with de training sets
 
 
 #%%
-# -------------------- Predicting the Test Set Results --------------------
+# ---------- Predicting the Test Set Results ----------
 y_pred = regressor.predict(X_test)
 
 
 #%%
-# -------------------- Visualising the Training Set Results --------------------
+# ---------- Visualising the Training Set Results ----------
 plt.scatter(X_train, y_train, color='green')
 plt.plot(X_train, regressor.predict(X_train))
 plt.title('Salary per Years of Experience (Training Set)')
@@ -48,7 +48,7 @@ plt.show()
 
 
 #%%
-# -------------------- Visualising the Test Set Results --------------------
+# ---------- Visualising the Test Set Results ----------
 plt.scatter(X_test, y_test, color='red')
 plt.plot(X_train, regressor.predict(X_train))
 plt.title('Salary per Years of Experience (Test Set)')
