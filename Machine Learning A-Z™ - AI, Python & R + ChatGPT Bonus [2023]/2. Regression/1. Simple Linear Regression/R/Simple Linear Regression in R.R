@@ -1,5 +1,3 @@
-setwd("~/GitHub/Machine-Learning-A-Z/Machine Learning A-Z™ - AI, Python & R + ChatGPT Bonus [2023]/2. Regression/1. Simple Linear Regression/R")
-
 # -------------------- Simple Linear Regression in R  --------------------
 
 # ---------- Importing the Dataset ----------
@@ -47,4 +45,3 @@ ggplot() +
   ggtitle('Salary per Years of Experience (Test set)') +
   xlab('Years of Experience') +
   ylab('Salary')
-
