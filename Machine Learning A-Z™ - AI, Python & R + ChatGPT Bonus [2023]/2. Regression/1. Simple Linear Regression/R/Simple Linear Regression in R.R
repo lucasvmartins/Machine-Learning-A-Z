@@ -41,7 +41,7 @@ ggplot() +
 # ---------- Visualising the Test set Results ----------
 ggplot() +
   geom_point(aes(x = test_set$YearsExperience, y = test_set$Salary),
-             colour = 'red') +
+             colour = 'darkgreen') +
   geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)),
             colour = 'blue') +
   ggtitle('Salary per Years of Experience (Test set)') +
